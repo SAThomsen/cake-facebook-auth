@@ -18,13 +18,16 @@ composer require SAThomsen/FacebookAuth dev-master
 ## Usage
 
 ### Association:
+```php
 $this->hasMany('SocialProfiles', [
     'className' => 'SAThomsen/FacebookAuth.SocialProfiles',
     'foreignKey' => 'user_id',
     'dependent' => true,
 ]);
+```
 
 ### Component config:
+```php
 $this->loadComponent('Auth', [
     'authenticate' => [
         'SAThomsen/FacebookAuth.Facebook' => [
@@ -36,9 +39,13 @@ $this->loadComponent('Auth', [
         ],
     ],
 ]);
-
+```
 ### Load facebook component:
+```php
 $this->loadComponent('SAThomsen/FacebookAuth.Facebook');
+```
 
 ### Migrate
+```sh
 cake migrations migrate -p SAThomsen/FacebookAuth
+```
