@@ -1,5 +1,4 @@
 <?php
-
 namespace SAThomsen\FacebookAuth\Controller\Component;
 
 use Cake\Controller\Component;
