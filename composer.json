@@ -6,7 +6,7 @@
         "cakephp",
         "authenticate",
         "authentication",
-        "facebook",
+        "facebook"
     ],
     "homepage": "http://github.com/ADmad/cakephp-jwt-auth",
     "authors": [
