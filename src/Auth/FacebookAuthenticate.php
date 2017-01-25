@@ -1,5 +1,5 @@
 <?php
-namespace FacebookAuth\Auth;
+namespace SAThomsen\FacebookAuth\Auth;
 
 use Cake\Auth\BaseAuthenticate;
 use Cake\Network\Request;

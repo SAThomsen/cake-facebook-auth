@@ -1,5 +1,5 @@
 <?php
-namespace FacebookAuth\Model\Table;
+namespace SAThomsen\FacebookAuth\Model\Table;
 
 use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;

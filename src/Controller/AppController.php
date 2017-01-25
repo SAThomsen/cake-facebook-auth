@@ -1,6 +1,6 @@
 <?php
 
-namespace FacebookAuth\Controller;
+namespace SAThomsen\FacebookAuth\Controller;
 
 use App\Controller\AppController as BaseController;
 

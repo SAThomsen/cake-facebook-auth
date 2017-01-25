@@ -1,5 +1,5 @@
 <?php
-namespace FacebookAuth\Model\Entity;
+namespace SAThomsen\FacebookAuth\Model\Entity;
 
 use Cake\ORM\Entity;
 
