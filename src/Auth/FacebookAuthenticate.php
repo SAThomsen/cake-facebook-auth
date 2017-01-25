@@ -6,7 +6,7 @@ use Cake\Network\Request;
 use Cake\Network\Response;
 use Cake\Controller\ComponentRegistry;
 use Cake\Core\Configure;
-use FacebookAuth\Controller\Component\FacebookComponent;
+use SAThomsen\FacebookAuth\Controller\Component\FacebookComponent;
 use Cake\Log\Log;
 
 class FacebookAuthenticate extends BaseAuthenticate
