@@ -8,7 +8,7 @@
         "authentication",
         "facebook"
     ],
-    "homepage": "http://github.com/ADmad/cakephp-jwt-auth",
+    "homepage": "http://github.com/SAThomsen/cakephp-facebook-auth",
     "authors": [
         {
             "name":"SAThomsen",
@@ -18,8 +18,8 @@
     ],
     "license": "MIT",
     "support": {
-        "source":"https://github.com/SAThomsen/cakephp-jwt-auth",
-        "issues":"https://github.com/SAThomsen/cakephp-jwt-auth/issues"
+        "source":"https://github.com/SAThomsen/cakephp-facebook-auth",
+        "issues":"https://github.com/SAThomsen/cakephp-facebook-auth/issues"
     },
     "require": {
         "php": ">=5.5.9",
