@@ -36,12 +36,15 @@ class FacebookAuthenticate extends BaseAuthenticate
     public function __construct(ComponentRegistry $registry, $config)
     {
         $this->config([
+            'fields' => [
+                'username' => 'email'
+            ],
+            'finder' => 'authFB',
             'header' => 'authorization',
             'prefix' => 'facebook',
-            'parameter' => 'token',
-            'fields' => ['username' => 'email'],
+            'parameter' => '',
             'unauthenticatedException' => '\Cake\Network\Exception\UnauthorizedException',
-            'key' => null,
+            'userModel' => 'SAThomsen/FacebookAuth.SocialProfiles',
         ]);
 
         parent::__construct($registry, $config);
