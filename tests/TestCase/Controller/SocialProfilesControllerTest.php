@@ -2,7 +2,7 @@
 namespace FacebookAuth\Test\TestCase\Controller;
 
 use Cake\TestSuite\IntegrationTestCase;
-use FacebookAuth\Controller\SocialProfilesController;
+use SAThomsen\FacebookAuth\Controller\SocialProfilesController;
 
 /**
  * FacebookAuth\Controller\SocialProfilesController Test Case
