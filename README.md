@@ -93,3 +93,6 @@ The database schema of SocialData can be imported via the migration file.
 ```sh
 cake migrations migrate -p SAThomsen/FacebookAuth
 ```
+## Testing
+To execute tests successfully make sure to be authenticated with the app that you wish to test against.
+Replace __APP_ID__, __APP_SECRET__ and __FACEBOOK_TOKEN__, in the tests/Auth/FacebookAuthenticate.php 
