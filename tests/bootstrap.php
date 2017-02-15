@@ -66,5 +66,6 @@ if (!getenv('db_dsn')) {
 
 Cake\Datasource\ConnectionManager::config('test', [
     'url' => getenv('DATABASE_TEST_URL'),
+    // 'url' => 'mysql://localhost:3306/databaseName?user=root&password=pass'
     'timezone' => 'UTC',
 ]);
