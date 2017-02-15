@@ -12,9 +12,9 @@ class SocialProfilesFixture extends TestFixture
         'id' => ['type' => 'integer'],
         'user_id' => ['type' => 'string', 'null' => false],
         'provider' => ['type' => 'string', 'null' => false],
-        'identifier' => ['type' => 'string', 'null' => false],
+        'identifier' => ['type' => 'string', 'null' => true],
         'email' => ['type' => 'string', 'null' => false],
-        'name' => ['type' => 'string', 'null' => false],
+        'name' => ['type' => 'string', 'null' => true],
         'first_name' => ['type' => 'string', 'null' => true],
         'middle_name' => ['type' => 'string', 'null' => true],
         'last_name' => ['type' => 'string', 'null' => true],
@@ -31,11 +31,9 @@ class SocialProfilesFixture extends TestFixture
      */
     public $records = [
         [
-            'user_name' => 'sathomsen',
-            'email' => 'sathomsen@example.com',
-            'password' => '12345678',
-            'created' => '2014-03-17 01:18:23',
-            'updated' => '2014-03-17 01:20:31',
-        ],
+            'user_id' => 1,
+            'provider' => 'facebook',
+            'email' => 'sebastian.thomsen@live.dk',
+        ]
     ];
 }
