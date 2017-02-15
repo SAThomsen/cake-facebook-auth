@@ -28,8 +28,9 @@ class FacebookComponent extends Component {
     /**
      * Facenbook app secret
      *
-     * Describes the version of the graph API in use. It's important that the format is correct.
-     * ie. 'v2.4'.
+     * Describes the version of the graph API in use. It's important 
+     * that the format is correct.
+     * ie. 'v2.8'.
      *
      * @var string|null
      */
@@ -53,11 +54,16 @@ class FacebookComponent extends Component {
     }
 
     /**
-     *  Fetches an profile that has authori
+     * Creates a facebook object
+     *  
+     * Gets the facebook user profile that is connected to the user profile 
+     * connected to the URL and returns the parameters connected to the 
+     * profile in an array.
      *
+     * @param String $token Facebook authentication token
+     * @return Array Containing the user information from facebook
      */
-
-    public function getFacebookUser($token)
+    public function getFacebookUser(String $token)
     {
         $fb = $this->getFacebookObject();
         try {
@@ -71,8 +77,8 @@ class FacebookComponent extends Component {
         }
 
         $userArray = $response
-                ->getGraphUser()
-                ->uncastItems();
+            ->getGraphUser()
+            ->uncastItems();
 
         $userArray['identifier'] = $userArray['id'];
         unset($userArray['id']);
