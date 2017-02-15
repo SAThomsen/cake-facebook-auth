@@ -66,7 +66,6 @@ class FacebookAuthenticate extends BaseAuthenticate
     public function getUser(Request $request)
     {
         $token = $this->getToken($request);
-
         if(empty($token)) {
             return false;
         }
@@ -91,7 +90,7 @@ class FacebookAuthenticate extends BaseAuthenticate
      *
      * @return string|null Token string if found else null.
      */
-    private function getToken($request = null)
+    private function getToken(Request $request = null)
     {
         $config = $this->_config;
 
@@ -108,9 +107,9 @@ class FacebookAuthenticate extends BaseAuthenticate
         }
 
         if (!empty($this->_config['parameter'])) {
-            $token = $request->query($this->_config['parameter']);
+            return $this->_token = $request->query($this->_config['parameter']);
         }
 
-        return $this->_token = $token;
+        return $this->_token;
     }
 }

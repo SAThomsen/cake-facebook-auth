@@ -56,7 +56,6 @@ class FacebookComponent extends Component {
      *  Fetches an profile that has authori
      *
      */
-
     public function getFacebookUser($token)
     {
         $fb = $this->getFacebookObject();
