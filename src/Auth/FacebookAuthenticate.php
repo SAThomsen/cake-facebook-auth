@@ -37,7 +37,7 @@ class FacebookAuthenticate extends BaseAuthenticate
     {
         $this->config([
             'fields' => [
-                'username' => 'email'
+                'username' => 'identifier'
             ],
             'finder' => 'authFB',
             'header' => 'authorization',
@@ -51,7 +51,7 @@ class FacebookAuthenticate extends BaseAuthenticate
     }
 
     /**
-     * Get user record based on info available in JWT.
+     * Get user record based on info available in facebook token.
      *
      * @param \Cake\Network\Request $request The request object.
      * @param \Cake\Network\Response $response Response object.
@@ -75,8 +75,8 @@ class FacebookAuthenticate extends BaseAuthenticate
         if (empty($fBUser)) {
             return false;
         }
-
-        $user = $this->_findUser($fBUser['email']);
+        
+        $user = $this->_findUser($fBUser['identifier']);
         if ($user) {
             return $user['user'];
         }
