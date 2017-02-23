@@ -32,7 +32,7 @@ To run the tests agains you're own facebook account, you will have to enter the 
 ```php
 Configure::write('facebook.identifier', 'REPLACE WITH FACEBOOK IDENTIFIER'));
 ```
-You can also go declare environment variables using the .env file in the /tests/config. Alternatively, you declare them globally in you local environemnt.
+You can also go declare environment variables using the .env file in the /tests/config. Alternatively, you declare them globally in you local environemnt. I have provided a template in /tests/config.
 
 ### Association:
 In order for the authentication to work, an association should be added to the table representing a user. It defaults to "Users".
