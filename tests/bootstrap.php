@@ -1,4 +1,6 @@
 <?php
+use Cake\Core\Configure;
+
 // @codingStandardsIgnoreFile
 $findRoot = function () {
     $root = __DIR__;
@@ -9,6 +11,7 @@ $findRoot = function () {
         }
     }
 };
+
 if (!defined('DS')) {
     define('DS', DIRECTORY_SEPARATOR);
 }
@@ -27,8 +30,13 @@ define('CORE_PATH', CAKE_CORE_INCLUDE_PATH . DS);
 define('CAKE', CORE_PATH . 'src' . DS);
 require ROOT . '/vendor/autoload.php';
 require CORE_PATH . 'config/bootstrap.php';
-Cake\Core\Configure::write('App', ['namespace' => 'App']);
-Cake\Core\Configure::write('debug', true);
+
+$Loader = (new josegonzalez\Dotenv\Loader(CONFIG . ".env"))
+    ->parse()
+    ->putenv(true);
+
+Configure::write('App', ['namespace' => 'App']);
+Configure::write('debug', true);
 
 $TMP = new \Cake\Filesystem\Folder(TMP);
 $TMP->create(TMP . 'cache/models', 0777);
@@ -69,3 +77,13 @@ Cake\Datasource\ConnectionManager::config('test', [
     // 'url' => 'mysql://localhost:3306/databaseName?user=root&password=pass'
     'timezone' => 'UTC',
 ]);
+
+// Configure facebook
+Configure::write('facebook.appId', getenv('FACEBOOK_APP_ID'));
+Configure::write('facebook.appSecret', getenv('FACEBOOK_APP_SECRET'));
+Configure::write('facebook.graphVersion', getenv('FACEBOOK_API_VERSION'));
+Configure::write('facebook.fields', 'id,name,first_name,middle_name,last_name,gender,email');
+
+// Add access token
+Configure::write('facebook.token', getenv('FACEBOOK_TOKEN'));
+Configure::write('facebook.identifier', getenv('FACEBOOK_IDENTIFIER'));

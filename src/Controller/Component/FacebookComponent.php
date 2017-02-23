@@ -75,7 +75,6 @@ class FacebookComponent extends Component {
             echo 'Facebook SDK returned an error: ' . $e->getMessage();
             exit;
         }
-
         $userArray = $response
             ->getGraphUser()
             ->uncastItems();
@@ -89,6 +88,7 @@ class FacebookComponent extends Component {
     private function getFacebookObject()
     {
         $fBConfig = Configure::read('facebook');
+
         return new Facebook([
             'app_id' => $this->_appId,
             'app_secret' => $this->_appSecret,

@@ -1,6 +1,5 @@
 <?php
 namespace SAThomsen\FacebookAuth\Auth\Test\TestCase\Auth;
-use SAThomsen\FacebookAuth\Auth\FacebookAuthenticate;
 use Cake\Core\Configure;
 use Cake\I18n\Time;
 use Cake\Network\Request;
@@ -8,6 +7,7 @@ use Cake\Network\Response;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 use Cake\Utility\Security;
+use SAThomsen\FacebookAuth\Auth\FacebookAuthenticate;
 /**
  * Test case for JwtAuthentication.
  */
@@ -40,13 +40,7 @@ class FacebookAuthenticateTest extends TestCase
         $this->response = $this->createMock('Cake\Network\Response');
         $this->Auth = new FacebookAuthenticate($this->Registry, []);
 
-        // Configure facebook
-        Configure::write('facebook.appId', 'APP_ID');
-        Configure::write('facebook.appSecret', 'APP_SECRET');
-        Configure::write('facebook.graphVersion', 'v2.8');
-        Configure::write('facebook.fields', 'id,name,first_name,middle_name,last_name,gender,email');
-
-        $this->_token = "FACEBOOK_TOKEN";
+        $this->_token = Configure::read('facebook.token');
     }
 
      /**
