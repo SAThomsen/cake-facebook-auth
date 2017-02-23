@@ -25,7 +25,8 @@
         "php": ">=5.5.9",
         "cakephp/cakephp": ">=3.1.0 <4.0.0",
         "facebook/graph-sdk": "^5.4",
-        "phpunit/phpunit": "<6.0"
+        "phpunit/phpunit": "<6.0",
+        "josegonzalez/dotenv": "dev-master"
     },
     "autoload": {
         "psr-4": {

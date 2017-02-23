@@ -1,6 +1,9 @@
 <?php
 namespace SAThomsen\FacebookAuth\Test\Fixture;
+
 use Cake\TestSuite\Fixture\TestFixture;
+use Cake\Core\Configure;
+
 class SocialProfilesFixture extends TestFixture
 {
     /**
@@ -13,7 +16,7 @@ class SocialProfilesFixture extends TestFixture
         'user_id' => ['type' => 'string', 'null' => false],
         'provider' => ['type' => 'string', 'null' => false],
         'identifier' => ['type' => 'string', 'null' => true],
-        'email' => ['type' => 'string', 'null' => false],
+        'email' => ['type' => 'string', 'null' => true],
         'name' => ['type' => 'string', 'null' => true],
         'first_name' => ['type' => 'string', 'null' => true],
         'middle_name' => ['type' => 'string', 'null' => true],
@@ -24,16 +27,16 @@ class SocialProfilesFixture extends TestFixture
         'updated' => 'datetime',
         '_constraints' => ['primary' => ['type' => 'primary', 'columns' => ['id']]],
     ];
-    /**
-     * records property.
-     *
-     * @var array
-     */
-    public $records = [
-        [
-            'user_id' => 1,
-            'provider' => 'facebook',
-            'email' => 'sebastian.thomsen@live.dk',
-        ]
-    ];
+    
+    public function init() 
+    {
+        $this->records = [
+            [
+                'user_id' => 1,
+                'provider' => 'facebook',
+                'identifier' => Configure::read('facebook.identifier'),
+            ]
+        ];
+        parent::init();
+    }
 }
