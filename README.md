@@ -28,6 +28,11 @@ Configure::write('facebook.appSecret', 'REPLACE WITH APP SECRET');
 Configure::write('facebook.graphVersion', 'v2.8'); //The api version you intend to use.
 Configure::write('facebook.fields', 'id,name,first_name,middle_name,last_name,gender,email');
 ```
+To run the tests agains you're own facebook account, you will have to enter the account identifier in your bootstrap too:
+```php
+Configure::write('facebook.identifier', 'REPLACE WITH FACEBOOK IDENTIFIER'));
+```
+You can also go declare environment variables using the .env file in the /tests/config. Alternatively, you declare them globally in you local environemnt.
 
 ### Association:
 In order for the authentication to work, an association should be added to the table representing a user. It defaults to "Users".
@@ -95,4 +100,6 @@ cake migrations migrate -p SAThomsen/FacebookAuth
 ```
 ## Testing
 To execute tests successfully make sure to be authenticated with the app that you wish to test against.
-Replace __APP_ID__, __APP_SECRET__ and __FACEBOOK_TOKEN__, in the tests/Auth/FacebookAuthenticate.php 
+Furthermore you should modify tests/bootstrap.php, with the credentials of your app and your own account.
+
+
