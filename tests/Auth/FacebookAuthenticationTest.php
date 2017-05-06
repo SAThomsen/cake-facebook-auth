@@ -1,5 +1,6 @@
 <?php
-namespace SAThomsen\FacebookAuth\Auth\Test\TestCase\Auth;
+namespace SAThomsen\FacebookAuth\Test\TestCase\Auth;
+
 use Cake\Core\Configure;
 use Cake\I18n\Time;
 use Cake\Network\Request;
@@ -8,6 +9,7 @@ use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 use Cake\Utility\Security;
 use SAThomsen\FacebookAuth\Auth\FacebookAuthenticate;
+
 /**
  * Test case for JwtAuthentication.
  */
